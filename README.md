@@ -2,6 +2,16 @@
 In this project, I want to use Random Forest and XGBoost to classify diabetes data.
 The dataset is available at this [Link](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008), which was uploaded by U of California, Irvine.
 
+## Data Preparation
+At the first step, I read the data as follows:
+![](Im1.png)
+This file has a size of 101766x50, which indicates 101766 data samples with 50 features.
 
-![Screenshot of the app](Image1.png)
+This data includes some irrelevant information, which were saved as "?". We have to transform them into 'Nan' data.
+From below description, we can see the the number of "?" cells in CSV file;
+
+![](Im2.png)
+
+Therefore, we have
+
 
