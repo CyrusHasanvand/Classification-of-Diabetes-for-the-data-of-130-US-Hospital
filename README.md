@@ -7,11 +7,11 @@ At the first step, I read the data as follows:
 ![](Im1.png)
 This file has a size of 101766x50, which indicates 101766 data samples with 50 features.
 
-This data includes some irrelevant information, which were saved as "?". We have to transform them into 'Nan' data.
-From below description, we can see the the number of "?" cells in CSV file;
+This data includes some irrelevant information, which was saved as "?". We have to transform them into 'Nan' data.
+From the description below, we can see the number of "?" cells in the CSV file;
 
 ![](Im2.png)
 
-Therefore, we have
+Therefore, we have (continue ...)
 
 
