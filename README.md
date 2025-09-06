@@ -7,6 +7,12 @@ At the first step, I read the data as follows:
 ![](Im1.png)
 This file has a size of 101766x50, which indicates 101766 data samples with 50 features.
 
+Based on the data description, we can see that only six features including:
+```python
+['gender','age','diag_1','diag_2','diag_3','readmitted']
+```
+are the most important ones, where ```'readmitted'``` is our target feature.
+
 This data includes some irrelevant information, which was saved as "?". We have to transform them into 'Nan' data.
 From the description below, we can see the number of "?" cells in the CSV file;
 
@@ -22,7 +28,10 @@ print((Data.iloc[:2, 3:8]))
 ```
 
 where we can see ```"?"``` in ```weight``` is identified as non ```Nan``` cell, therefore, we have to transform all ```"?"``` cells into ```Nan```.
-
+So, we use the following code to transform all ```?``` into ```Nan```:
+```python
+Data.replace("?",np.nan,inplace=True)
+```
 
 
 
