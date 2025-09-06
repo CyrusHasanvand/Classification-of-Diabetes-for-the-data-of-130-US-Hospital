@@ -32,6 +32,9 @@ So, we use the following code to transform all ```?``` into ```Nan```:
 ```python
 Data.replace("?",np.nan,inplace=True)
 ```
-
+## Labeling
+In this section, we have to create a label for each string-based data such as the diagnosis features ```diag_1, diag_2```, and ```diag_3```.
+This is because we want to develop a classification model. Although the model iteself can provide internal labels, however, we can perform this labeling, providing a mechanism to simplify further data evaluations.
+Hence, for ```gender``` we have ```Female=1``` and ```Male=2```, and ```age``` we have ```"[0-10)"=1,...,"[90-100)"=10, and "other"=11```
 
 
