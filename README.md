@@ -1,7 +1,7 @@
 # Diabetes data classifications
 In this project, I want to use Random Forest and XGBoost to classify diabetes data.
 The dataset is available at this [Link](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008), which was uploaded by U of California, Irvine.
-
+The objective in this project is to decide whether a patient will come back to the hospital within 30 days after visiting a specific doctor or not. 
 ## Data Preparation
 At the first step, I read the data as follows:
 ![](Im1.png)
@@ -50,7 +50,7 @@ Yout = Data['readmitted']                                     # target
 In this step, we use ```train_test_split``` to split the data as follows:
 ```python
 from sklearn.model_selection import train_test_split
-Xtrain, Xtest, Ytrain, Ytest = train_test_split(Xin, Yout, test_size=0.2, random_state=42)
+Xtrain, Xtest, Ytrain, Ytest = train_test_split(Xin, Yout, test_size=0.2, random_state=42, stratify=Yout)
 ```
 where ```train_test_split``` is utilized to define training and testing samples. ```test_size=0.2``` means that 80% of the data is used for training and the rest, 20%, is reserved for testing the model. In addition, ```random_state=13``` is used to help us generate the same data in each run, I mean, the data would not be changed by the new run. It is notable to say that ```13``` can be changed to any number.
 So, we have prepared data and we can train models.
@@ -87,33 +87,51 @@ Corrects=0
 for i in range(len(Ypredicion_1)):
     if Ypredicion_1[i]==Ytest[i]:
         Corrects=Corrects+1
-Precision=Corrects/len(Ypredicion)
+Precision=Corrects/len(Ypredicion_1)
 print(f'The precision of the Random Forest is: {round(Precision,4)}')
 ```
 
 ### XGBoost
+To use XGBoost, we need to use its package as follow:
+```python
+import xgboost as xgb
+```
+Then based on our objective, which is a binary response as ```Yes``` or ```No``` to the question regarding revisiting a patient within 30 days after the first evaluation, we use ```binary``` as our goal in xgboost as follows:
+```python
+XgbModel_1 = xgb.XGBClassifier(
+    objective="binary:logistic",
+    eval_metric="logloss",
+    use_label_encoder=False,
+    scale_pos_weight=(len(Yout) - sum(Yout)) / sum(Yout),
+    n_estimators=100,
+    random_state=42
+)
+XgbModel_2 = xgb.XGBClassifier(
+    objective="binary:logistic",
+    eval_metric="logloss",
+    use_label_encoder=False,
+    #scale_pos_weight=(len(Yout) - sum(Yout)) / sum(Yout),
+    n_estimators=100,
+    random_state=42
+)
+```
+then, we can fit the model to training data as follows:
+```python
+XgbModel_1.fit(Xtrain, Ytrain)
+XgbModel_2.fit(Xtrain, Ytrain)
+```
+Therefore, the prediction and accuracy would be checked as:
+```python
+Ypredicion_1 = XgbModel_1.predict(Xtest)
+Ypredicion_2 = XgbModel_2.predict(Xtest)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Corrects=0
+for i in range(len(Ypredicion_1)):
+    if Ypredicion_1[i]==Ytest[i]:
+        Corrects=Corrects+1
+Precision=Corrects/len(Ypredicion_1)
+print(f'The precision of the Random Forest is: {round(Precision,4)}')
+```
 
 
 
