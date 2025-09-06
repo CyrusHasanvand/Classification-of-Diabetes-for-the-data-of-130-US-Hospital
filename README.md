@@ -1,5 +1,5 @@
 # Diabetes data classifications
-In this project, I want to use **Random Forest** and **XGBoost** to classify diabetes data \textcolor{red}{HHHHH}.
+In this project, I want to use **Random Forest** and **XGBoost** to classify diabetes data.
 The dataset is available at this [Link](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008), which was uploaded by U of California, Irvine.
 The objective in this project is to decide whether a patient will come back to the hospital within 30 days after visiting a specific doctor or not. 
 ## Data Preparation
@@ -7,7 +7,7 @@ At the first step, I read the data as follows:
 ![](Im1.png)
 This file has a size of 101766x50, which indicates 101766 data samples with 50 features.
 
-Based on the data description, we can see that only six features including:
+Based on the data description, we can see that only six features, including:
 ```python
 ['gender','age','diag_1','diag_2','diag_3','readmitted']
 ```
