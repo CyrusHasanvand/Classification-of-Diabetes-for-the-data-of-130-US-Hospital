@@ -17,8 +17,8 @@ Below, we can see the number of 'Nan' cells in data.
 ![](Im3.png)
 
 where we can see from 
-'''
+'''python
 print((Data.iloc[:2, 3:8]))
-'''
-that "?" in ''' weight ''' 
+
+that "?" in '''python weight 
 
