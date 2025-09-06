@@ -21,5 +21,8 @@ where we can see from
 print((Data.iloc[:2, 3:8]))
 ```
 
-that "?" in ```python weight```  is another sss  s dsdf sdf df 
+where we can see ```"?"``` in ```weight``` is identified as non ```Nan``` cell, therefore, we have to transform all ```"?"``` cells into ```Nan```.
+
+
+
 
