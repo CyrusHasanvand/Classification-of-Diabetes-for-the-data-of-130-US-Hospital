@@ -12,6 +12,13 @@ From the description below, we can see the number of "?" cells in the CSV file;
 
 ![](Im2.png)
 
-Therefore, we have (continue ...)
+Below, we can see the number of 'Nan' cells in data.
 
+![](Im3.png)
+
+where we can see from 
+'''
+print((Data.iloc[:2, 3:8]))
+'''
+that "?" in ''' weight ''' 
 
