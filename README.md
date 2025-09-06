@@ -18,7 +18,8 @@ Below, we can see the number of 'Nan' cells in data.
 
 where we can see from 
 ```python
-print((Data.iloc[:2, 3:8]))```
+print((Data.iloc[:2, 3:8]))
+```
 
-that "?" in ```python weight```  is 
+that "?" in ```python weight```  is another sss  s dsdf sdf df 
 
