@@ -75,12 +75,23 @@ RanForModel_1.fit(Xtrain, Ytrain)
 RanForModel_2.fit(Xtrain, Ytrain)
 ```
 
+Finally, we can get the prediction for testing samples as follows:
+```python
+Ypredicion_1 = RanForModel_1.predict(Xtest)
+Ypredicion_2 = RanForModel_2.predict(Xtest)
+```
+where the accuracy of the model would be reached based on the following step:
+```python
+Ytest = Ytest.reset_index(drop=True)
+Corrects=0
+for i in range(len(Ypredicion_1)):
+    if Ypredicion_1[i]==Ytest[i]:
+        Corrects=Corrects+1
+Precision=Corrects/len(Ypredicion)
+print(f'The precision of the Random Forest is: {round(Precision,4)}')
+```
 
-
-
-
-
-
+### XGBoost
 
 
 
