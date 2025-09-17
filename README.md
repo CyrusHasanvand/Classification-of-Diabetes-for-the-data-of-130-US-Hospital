@@ -51,7 +51,7 @@ Yout = Data['readmitted']                                     # target
 In this step, we use ```train_test_split``` to split the data as follows:
 ```python
 from sklearn.model_selection import train_test_split
-Xtrain, Xtest, Ytrain, Ytest = train_test_split(Xin, Yout, test_size=0.2, random_state=42, stratify=Yout)
+Xtrain, Xtest, Ytrain, Ytest = train_test_split(Xin, Yout, test_size=0.2, random_state=13, stratify=Yout)
 ```
 where ```train_test_split``` is utilized to define training and testing samples. ```test_size=0.2``` means that 80% of the data is used for training and the rest, 20%, is reserved for testing the model. In addition, ```random_state=13``` is used to help us generate the same data in each run, I mean, the data would not be changed by the new run. It is notable to say that ```13``` can be changed to any number.
 So, we have prepared data and we can train models.
