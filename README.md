@@ -5,6 +5,7 @@ The objective in this project is to decide whether a patient will come back to t
 ## Data Preparation
 At the first step, I read the data as follows:
 ![](Im1.png)
+
 This file has a size of 101766x50, which indicates 101766 data samples with 50 features.
 
 Based on the data description, we can see that only six features, including:
