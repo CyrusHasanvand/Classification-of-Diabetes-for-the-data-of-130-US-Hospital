@@ -116,7 +116,9 @@ XgbModel_2 = xgb.XGBClassifier(
     random_state=42
 )
 ```
-then, we can fit the model to training data as follows:
+I have defined two XGBoost models to see the effect of imbalanced data on the output. It is worth noting that when a class has a large number of samples in comparison to other classes, it creates a bias in decision-making over testing samples. While I refer the reader to search about this imbalance situation, I would like to point out some considerations regarding this aspect. To mitigate the effect of imbalanced circumstances, we can apply different operations, such as increasing the number of samples for a class with a few members by generating new data synthetically with the interconnection between samples, or reducing the number of much-populated classes to decrease this bias. Furthermore, this bias may increase the degree of overfitting toward specific classes with larger members; consequently, the model's generalization may suffer in providing good accuracy regarding testing samples. Additionally, the reader is also referred to seek more about the Out-of-Distribution (OOD) challenge to rectify negative performances toward their model generalizations. 
+
+Finally, we can fit the model to the training data as follows:
 ```python
 XgbModel_1.fit(Xtrain, Ytrain)
 XgbModel_2.fit(Xtrain, Ytrain)
