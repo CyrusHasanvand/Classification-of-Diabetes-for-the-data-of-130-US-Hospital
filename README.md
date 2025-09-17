@@ -28,7 +28,7 @@ where we can see from
 print((Data.iloc[:2, 3:8]))
 ```
 
-where we can see ```"?"``` in ```weight``` is identified as non ```Nan``` cell, therefore, we have to transform all ```"?"``` cells into ```Nan```.
+that it shows ```"?"``` in ```weight``` is identified as non ```Nan``` cell, therefore, we have to transform all ```"?"``` cells into ```Nan```.
 So, we use the following code to transform all ```?``` into ```Nan```:
 ```python
 Data.replace("?",np.nan,inplace=True)
