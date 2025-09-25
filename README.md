@@ -15,7 +15,7 @@ Based on the data description, we can see that only six features, including:
 are the most important ones, where ```'readmitted'``` is our target feature.
 
 This data includes some irrelevant information, which was saved as "?". We have to transform them into 'Nan' data.
-From the description below, we can see the number of "?" cells in the CSV file;
+From the description below, we can see the number of "?" cells in the CSV file.
 
 ![](Im2.png)
 
